@@ -1,14 +1,25 @@
 package us.mattgreen;
 
+import com.sun.deploy.jardiff.JarDiffConstants;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * MAIN MEAL DATA
+ * @author kpatr
+ * @version 1.0.0
+ */
 public class Main {
 
     private final static FileInput indata = new FileInput("meals_data.csv");
     private static Scanner keyboard = new Scanner(System.in);
     private static MealsArray mealsArray = new MealsArray();
 
+    /**
+     * MAIN STARTING POINT OF PROGRAM
+     * @param args MAIN ARGUMENTS ON PROGRAM LOAD
+     */
     public static void main(String[] args) {
         String line;
         String[] fields;
@@ -20,6 +31,9 @@ public class Main {
         runMenu();
     }
 
+    /**
+     * OUTPUT THE STARTING MENU
+     */
     private static void printMenu() {
         System.out.println("Select Action");
         System.out.println("1. List All Items");
@@ -29,6 +43,9 @@ public class Main {
         System.out.print("Please Enter your Choice: ");
     }
 
+    /**
+     * READ MENU INPUT
+     */
     private static void runMenu() {
         char ans;
         boolean userContinue = true;
@@ -43,6 +60,10 @@ public class Main {
             }
         }
     }
+
+    /**
+     * OUTPUT THE MEALS LIST
+     */
     private static void listByMeal() {
         char ans;
         int ansNum=0;
@@ -78,6 +99,10 @@ public class Main {
         }
         mealsArray.printMealsByType(mealType);
     }
+
+    /**
+     * SEARCH MEALS BY NAME
+     */
     private static void searchByName() {
         keyboard.nextLine();
         System.out.print("Please Enter Value: ");
